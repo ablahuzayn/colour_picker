@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorPicker</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: sans-serif;
+            display: block;
+            
+        }
+        .box{
+            border: 3px solid;
+            border-radius: 2%;
+            display: block;
+            margin: auto;
+            padding: 50px;
+            width: 50%;
+        }
+        button{
+            margin: 10px;
+            background-color: black;
+            color: white;
+            font-size: large;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box">
+    <h1>Color Picker</h1>
+    <p>Enter any color to change background</p>
+    <input type="text" id="color" placeholder="Enter a color (name or hex)"><br>
+    <button onclick="clr()">Apply Color</button>
+    </div>
+</body>
+ <script>
+        function clr(){
+            const input = document.getElementById("color").value.trim()
+            document.body.style.backgroundColor = input;
+             const test = document.createElement("div");
+             test.style.color = input;
+             if (test.style.color === "") {
+      alert("Invalid color! Try something like 'red', 'blue', or '#ffcc00'");
+    } else {
+      document.body.style.backgroundColor = input;
+    }
+  }
+        
+    </script>
+</html>
